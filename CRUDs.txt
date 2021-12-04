@@ -1,0 +1,114 @@
+mongodb+srv://Admin:12345@cluster0.fc3em.mongodb.net/ProWD?retryWrites=true&w=majority
+
+
+
+// CRUD USUARIO  
+//CREAR UN USUARIO:
+
+    await UserModel.create({
+         correo: "miguelcar_08@hotmail.com",
+         identificacion: "100562939",
+         nombre: "José Angel",
+         apellido: "Rodas Franco",
+    })
+     .then((u) => {
+         console.log('Usuario creado', u);
+     })
+     .catch((e) =>  {
+         console.error('Error creando el usuario', e);
+     });
+
+// ENCONTRAR LOS USUARIOS:
+
+  //  await UserModel.find()
+  //  .then((u) => {
+  //  console.log('usuarios', u);
+  //  })
+  //  .catch((e) => {
+  //  console.error('Error obteniendo los usuarios', e);
+  //  });
+
+// ENCONTRAR UN USUARIO:
+//  await UserModel.findOne({nombre:"Stefano"})
+  //  .then((u) => {
+  //  console.log('usuarios', u);
+  //  })
+  //  .catch((e) => {
+  //  console.error('Error obteniendo los usuarios', e);
+  //  });
+
+// ACTUALIZAR UN USUARIO:
+
+  //  await UserModel.findOneAndUpdate(
+  //      {correo: 'miganraco@gmail.com'},
+  //      {nombre: 'Marcos',
+  //       apellido: 'Pineda Franco'
+  //     })
+  //     .then((u) => {
+  //       console.log('usuario actualizado', u);
+  //       })
+  //     .catch((e) => {
+  //       console.error('Error actualizando el usuario', e);
+
+// ELIMINAR UN USUARIO:
+  
+    //   await UserModel.findOneAndDelete({ correo: "andrearojasvi@gmail.com" })
+    //     .then((u) => {
+    //       console.log("usuario eliminado", u);
+    //     })
+    //    .catch((e) => {
+    //       console.error('Error actualizando el usuario', e);
+    //    });   
+
+
+// CRUD PROYECTOS
+
+// CREAR UN PROYECTO   
+    //   ProyectModel.create({
+    //      nombre: "JavaScrip 1",
+    //      presupuesto: 200,
+    //      fechaInicio:Date.now(),
+    //      fechaFin: new Date("2022/12/10"),
+    //     })
+    //     .then((u) => {
+    //            console.log('Proyecto creado', u);
+    /   /         })
+    //     .catch((e) =>  {
+    //            console.error('Error creando el proyecto', e);     
+    //  });
+
+
+        // ObjetivModel.create({
+    //   descripcion: 'Permitir que el estudiante pueda resolver problemas (matemáticos, administrativos, lógicos…) empleando el ordenador como herramienta.',
+    //   type:'Específico',
+         
+    //})
+         
+ });
+};
+
+
+  // ProyectModel.create({
+  //       nombre: "JavaScrip 1",
+  //       presupuesto: 200,
+  //       fechaInicio:Date.now(),
+  //       fechaFin: new Date("2022/12/10"),
+  //       lider: '61a67f6c06b3b9bb55f4007f',
+  //       objetivos: [
+  //         '61a8e438a1b749ff13004fe7'
+  //       ]
+
+
+objetivos
+
+
+  const objet = await ObjetivModel.create({
+    descripcion: 'Este es el objetivo general',
+  
+  });
+
+
+  
+ ["PENDIENTE", "AUTORIZADO", "NO_AUTORIZADO"]!
+ ["ESTUDIANTE", "LIDER", "ADMINISTRADOR"]!
+
