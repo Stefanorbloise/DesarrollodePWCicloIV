@@ -1,5 +1,5 @@
 import React from "react";
-import './Navegacion.css';
+import '../styles/Navegacion.css';
 
 import {
     Link,

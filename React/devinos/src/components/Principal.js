@@ -1,7 +1,8 @@
 import React from 'react'
-import Usuarios from './Usuarios'
+import '../styles/Principal.css'
+import Usuarios from '../pages/usuarios/Usuarios'
 import Proyectos from './Proyectos'
-import './Principal.css'
+
 function Principal(props) {
     switch (props.component) {
         case "1":

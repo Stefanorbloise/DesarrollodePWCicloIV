@@ -9,17 +9,31 @@ import {
 } from "react-router-dom";
 import { Login } from './components/Login';
 import App from './App';
+import {ApolloClient, ApolloProvider, InMemoryCache} from '@apollo/client';
+import './styles/Tabla.css';
+
+
+
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/',
+  cache: new InMemoryCache(),
+});
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/Principal" element={<App />} />
-        <Route path="/" element={<Login />} />
-        <Route path="/Proyectos" element={<Principal component="1" />} />
-        <Route path="/Usuarios" element={<Principal component="2" />} />
-      </Routes>
-    </Router>
-  </React.StrictMode>,
+
+  <ApolloProvider client={client}>
+    <React.StrictMode>
+      <Router>
+        <Routes>
+          <Route path="/Principal" element={<App />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/Proyectos" element={<Principal component="1" />} />
+          <Route path="/Usuarios" element={<Principal component="2" />} />
+        </Routes>
+      </Router>
+    </React.StrictMode>,
+  </ApolloProvider>,
   document.getElementById('root')
 );
