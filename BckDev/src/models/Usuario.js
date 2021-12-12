@@ -10,7 +10,7 @@ const usuarioSchema = new Schema({
     },
     contrasena:{
         type: String,
-        required: true
+        required: false
     },
     identificacion: {
         type: String,

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Principal.css'
 import Usuarios from '../pages/usuarios/Usuarios'
-import Proyectos from './Proyectos'
+import Proyectos from '../pages/proyectos/Proyectos'
 
 function Principal(props) {
     switch (props.component) {

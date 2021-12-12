@@ -5,13 +5,24 @@ query Usuarios {
   usuarios {
     _id
     correo
-    contrasena
     identificacion
-    nombre
     rol
+    nombre
     estado
   }
 }
 `;
 
-export {GET_USUARIOS};
+const GET_USUARIO = gql`
+query BuscarUsuarios($_id: ID!) {
+  buscarUsuarios(_id: $_id) {
+    _id
+    correo
+    identificacion
+    nombre
+    estado  
+  }
+}
+`;
+
+export {GET_USUARIOS, GET_USUARIO};

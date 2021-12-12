@@ -5,12 +5,6 @@ import './App.css';
 import { Fragment } from 'react/cjs/react.production.min';
 
 
-// const httpLink = createHttpLink({
-//   uri:'https://servidor-gql-mintic.herokuapp.com/graphql'
-// });
-
-
-
 
 function App() {
   return (

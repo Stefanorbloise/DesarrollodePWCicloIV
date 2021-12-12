@@ -43,7 +43,7 @@ type Mutation {
         fechainicio: String!, 
         fechafinal: String!, 
         nombrelider: String!, 
-        idlider: String!, 
+        # idlider: String!, 
         estado: String!, 
         fase: String!
         ): Proyecto
@@ -93,10 +93,10 @@ type Mutation {
      actualizarUsuarios(
         _id: ID!
         correo: String!
-        contrasena: String!  
+        # contrasena: String!  
         identificacion: String!
         nombre: String!
-        rol: String!
+"""     rol: String! """
         estado: String!
         ):Usuario
 }

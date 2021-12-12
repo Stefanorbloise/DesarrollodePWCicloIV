@@ -8,7 +8,7 @@ const Mutation = {
         const newProyecto = new Proyecto({nombre, objetivog, objetivose, presupuesto, fechainicio, fechafinal, nombrelider, idlider, estado, fase})
         return await newProyecto.save()
     },
-    actualizarProyecto: async(_, {_id, nombre, objetivog, objetivose, presupuesto, fechainicio, fechafinal, nombrelider, idlider, estado, fase}) => {
+    actualizarProyecto: async(_, {_id, nombre, objetivog, objetivose, presupuesto, fechainicio, fechafinal, nombrelider, /* idlider, */ estado, fase}) => {
         const ProyectoEditado = await Proyecto.findByIdAndUpdate(_id, {
             nombre,
             objetivog,
@@ -17,7 +17,7 @@ const Mutation = {
             fechainicio,
             fechafinal,
             nombrelider,
-            idlider,
+/*             idlider, */
             estado,
             fase
         });
@@ -61,13 +61,13 @@ const Mutation = {
         })
         return await newUser.save()
     },
-    actualizarUsuarios: async(_, {_id, correo, contrasena, identificacion, nombre, rol, estado}) => {
+    actualizarUsuarios: async(_, {_id, correo, /* contrasena, */ identificacion, nombre, /* rol */ estado}) => {
         const UsuarioEditado = await Usuario.findByIdAndUpdate(_id, {
             correo, 
-            contrasena, 
+  /*           contrasena,  */
             identificacion, 
             nombre, 
-            rol, 
+/*             rol,  */
             estado
         });
         return UsuarioEditado;
