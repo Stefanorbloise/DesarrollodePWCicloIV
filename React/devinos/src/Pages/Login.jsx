@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import LogoDevinos2 from "../assets/LogoDevinos2.png";
-import useFormData from '../hooks/useFormData';
+import useFormData from '../Hooks/useFormData';
 import { VALIDARUSUARIO } from '../Graphql/usuarios/mutations';
 import { useMutation} from '@apollo/client';
 import ButtonLoading from '../components/ButtonLoading';
