@@ -1,0 +1,50 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    position: fixed;
+    top: 0vh;
+  
+    background-color: #8360c4cc;
+    color: rgb(0, 0, 0);
+  
+    height: 100vh;
+    width: 20%;
+}
+#navT {
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+nav #navElements {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0px;
+
+}.Element{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    transition: transform .2s linear;
+}
+
+button{
+    color: blue;
+    background: white;
+    border-radius: 25%;
+    padding: 2%;
+    border-color: white;
+    align-self: center;
+}
+
+
+input{
+    width: 100%;
+    height: 30px;
+    padding: 1px 2px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 40px;
+    background-color: #f8f8f8;
+
+}
