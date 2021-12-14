@@ -12,7 +12,7 @@ type Query {
     inscripcionsProy(idproyecto: String!): [Inscripcion!]
 
     usuarios: [Usuario!]
-    buscarUsuarios(_id: ID!): Usuario!
+    buscarUsuarios(_id: String!): Usuario!
     verEstudiantes(rol: String!): Usuario!
     usuariosByRol(rol: String!): [Usuario!]
     validarUsuario(
@@ -37,16 +37,15 @@ type Mutation {
 
     actualizarProyecto(
         _id:ID!,
-        nombre: String!, 
-        objetivog: String!, 
-        objetivose: [String]! 
-        presupuesto: String!, 
-        fechainicio: String!, 
-        fechafinal: String!, 
-        nombrelider: String!, 
-        idlider: String!, 
-        estado: String!, 
-        fase: String!
+        nombre: String, 
+        objetivog: String, 
+        objetivose: [String] 
+        presupuesto: String, 
+        fechainicio: String, 
+        fechafinal: String, 
+        nombrelider: String, 
+        estado: String, 
+        fase: String
         ): Proyecto
     
     createAvance(
@@ -88,23 +87,28 @@ type Mutation {
         identificacion: String!
         nombre: String!
         rol: String!
-        estado: String!
         ):Usuario
 
      actualizarUsuarios(
-        _id: ID!
-        correo: String!
-        contrasena: String!  
-        identificacion: String!
-        nombre: String!
-        rol: String!
-        estado: String!
+        _id: String!
+        correo: String
+        contrasena: String  
+        identificacion: String
+        nombre: String
+        rol: String
+        estado: String
         ):Usuario
 
     actualizarUsuariosEstado(
         _id: ID!
         estado: String!
         ):Usuario
+        
+    validarUsuario(
+        correo: String!
+        contrasena: String!
+        ):Token!
+    refreshToken:Token!
 }
 
 type Proyecto {
@@ -117,8 +121,8 @@ type Proyecto {
     fechafinal: String!
     nombrelider: String!
     idlider: String!
-    estado: ID!
-    fase: ID!
+    estado: String!
+    fase: String!
 }
 
 type Avance {
@@ -146,4 +150,9 @@ type Usuario {
     nombre: String!
     rol: String!
     estado: String!
+}
+
+type Token{
+    token: String
+    error: String
 }
