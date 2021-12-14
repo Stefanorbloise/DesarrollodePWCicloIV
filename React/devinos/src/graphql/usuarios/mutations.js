@@ -1,43 +1,40 @@
-import {gql} from '@apollo/client'
-
+import { gql } from '@apollo/client';
 
 const EDITAR_USUARIO = gql`
-mutation ActualizarUsuarios($_id: ID!, 
-$correo: String!, 
-$identificacion: String!, 
-$nombre: String!, 
-$estado: String!,
-$rol: String!,
-$contrasena: String!
-) {
-  actualizarUsuarios(_id: $_id, 
-  correo: $correo, 
-  identificacion: $identificacion, 
-  nombre: $nombre, 
-  estado: $estado,
-  rol: $rol,
-  contrasena: $contrasena) {
+  mutation ($_id: String!, $correo: String, $contrasena: String, $identificacion: String, $nombre: String, $rol: String, $estado: String) {
+  actualizarUsuarios(_id: $_id, correo: $correo, contrasena: $contrasena, identificacion: $identificacion, nombre: $nombre, rol: $rol, estado: $estado) {
     _id
     correo
+    contrasena
     identificacion
     nombre
-    estado
     rol
-    contrasena
-  }
-}
-`;
-
-const EDITAR_USUARIO_ESTADO = gql`
-mutation ActualizarUsuariosEstado($_id: ID!, 
-$estado: String!
-) {
-  actualizarUsuariosEstado(_id: $_id,
-  estado: $estado) {
-    _id
     estado
   }
 }
 `;
 
-export {EDITAR_USUARIO, EDITAR_USUARIO_ESTADO};
+const REGISTRAR_USUARIO = gql`
+    mutation ($correo: String!, $contrasena: String!, $identificacion: String!, $nombre: String!, $rol: String!) {
+        registrarUsuario(correo: $correo, contrasena: $contrasena, identificacion: $identificacion, nombre: $nombre, rol: $rol) {
+            _id
+            correo
+            contrasena
+            identificacion
+            nombre
+            rol
+        }
+    }  
+`;
+
+const VALIDARUSUARIO = gql`
+mutation ($correo: String!, $contrasena: String!) {
+  validarUsuario(correo: $correo, contrasena: $contrasena) {
+    token
+    error
+  }
+}
+
+`;
+
+export { EDITAR_USUARIO, REGISTRAR_USUARIO, VALIDARUSUARIO };

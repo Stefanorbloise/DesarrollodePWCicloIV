@@ -5,41 +5,28 @@ query Usuarios {
   usuarios {
     _id
     correo
-    identificacion
-    rol
-    nombre
-    estado
     contrasena
+    identificacion
+    nombre
+    rol
+    estado
   }
 }
 `;
 
 const GET_USUARIO = gql`
-query BuscarUsuarios($_id: ID!) {
+  query ($_id: String!) {
   buscarUsuarios(_id: $_id) {
     _id
     correo
+    contrasena
     identificacion
     nombre
-    estado
     rol
-    contrasena
+    estado
   }
 }
+
 `;
 
-const GET_USUARIOS_ROL = gql`
-query UsuariosByRol($rol: String!) {
-  usuariosByRol(rol: $rol) {
-    _id
-    correo
-    identificacion
-    rol
-    nombre
-    estado
-    contrasena
-  }
-}
-`;
-
-export {GET_USUARIOS, GET_USUARIO, GET_USUARIOS_ROL};
+export { GET_USUARIOS, GET_USUARIO };
