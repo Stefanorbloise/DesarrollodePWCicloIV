@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { REGISTRAR_USUARIO } from '../Graphql/usuarios/mutations';
-import useFormData from '../hooks/useFormData';
+import useFormData from '../Hooks/useFormData';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router';
-import DropDown from '../components/DropDown';
+import DropDown from '../components/dropdown';
 import ButtonLoading from '../components/ButtonLoading';
 import './SignUpStyle.css'
 

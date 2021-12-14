@@ -3,9 +3,9 @@ import { GET_USUARIO } from "../Graphql/usuarios/queries";
 import { useQuery } from '@apollo/client';
 import { useMutation } from '@apollo/client';
 import { EDITAR_USUARIO } from '../Graphql/usuarios/mutations';
-import useFormData from '../hooks/useFormData';
+import useFormData from '../Hooks/useFormData';
 import { useParams } from 'react-router-dom';
-import DropDown from '../components/DropDown';
+import DropDown from '../components/dropdown';
 import ButtonLoading from '../components/ButtonLoading';
 import './mainStyle.css'
 

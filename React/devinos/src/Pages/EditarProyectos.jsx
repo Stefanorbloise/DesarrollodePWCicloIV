@@ -3,9 +3,9 @@ import { useParams, Link } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
 import { GET_PROYECTO } from '../Graphql/proyectos/queries';
 import ButtonLoading from '../components/ButtonLoading';
-import useFormData from '../hooks/useFormData';
+import useFormData from '../Hooks/useFormData';
 import { EDITAR_PROYECTO } from '../Graphql/proyectos/mutations';
-import DropDown from '../components/DropDown';
+import DropDown from '../components/dropdown';
 import './mainStyle.css'
 
 const EditarProyecto = () => {
