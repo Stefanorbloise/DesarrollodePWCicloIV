@@ -71,6 +71,12 @@ const Mutation = {
             estado
         });
         return UsuarioEditado;
+    },
+    actualizarUsuariosEstado: async(_, {_id,  estado}) => {
+        const UsuarioEditado = await Usuario.findByIdAndUpdate(_id, {
+            estado
+        });
+        return UsuarioEditado;
     }
 }
 

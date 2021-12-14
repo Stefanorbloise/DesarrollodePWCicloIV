@@ -14,6 +14,7 @@ type Query {
     usuarios: [Usuario!]
     buscarUsuarios(_id: ID!): Usuario!
     verEstudiantes(rol: String!): Usuario!
+    usuariosByRol(rol: String!): [Usuario!]
     validarUsuario(
         correo: String!
         contrasena: String!
@@ -97,6 +98,11 @@ type Mutation {
         identificacion: String!
         nombre: String!
         rol: String!
+        estado: String!
+        ):Usuario
+
+    actualizarUsuariosEstado(
+        _id: ID!
         estado: String!
         ):Usuario
 }

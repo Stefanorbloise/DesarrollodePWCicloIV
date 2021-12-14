@@ -43,6 +43,9 @@ const Query = {
     verEstudiantes: async(_,rol) => {
         return await Usuario.findOne(rol)
     },
+    usuariosByRol: async (_,rol) => {
+        return await Usuario.find(rol)
+    },
     validarUsuario: async(_,correo, contrasena) => {
         return await Usuario.findOne({
             $and: [
